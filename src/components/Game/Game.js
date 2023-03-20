@@ -33,6 +33,21 @@ function Game() {
 
   return (
     <>
+      {gameStatus !== 'running' && (
+        <button
+          onClick={() => {
+            setGuesses([]);
+            setGameStatus('running');
+          }}
+          style={{
+            backgroundColor: "skyblue",
+            textAlign: "center",
+            height: "40px",
+            width: "100px",
+            marginLeft: "160px"
+          }}
+        >Reset</button>
+      )}
       <GuessResults guesses={guesses} answer={answer}/>
       <GuessInput
         handleSubmitGuess={handleSubmitGuess}
